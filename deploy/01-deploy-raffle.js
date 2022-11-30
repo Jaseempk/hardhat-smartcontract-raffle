@@ -31,8 +31,8 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         subscriptionId,
         gasLane,
         interval,
-        entranceFee,
         callbackGasLimit,
+        entranceFee,
     ];
 
     const raffle = await deploy("Raffle", {

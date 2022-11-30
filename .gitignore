@@ -1,3 +1,7 @@
 node_modules
 .env
 .prettierrc
+artifacts
+cache
+yarn.lock
+package-lock.json
