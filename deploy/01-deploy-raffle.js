@@ -2,14 +2,14 @@ const { ethers } = require("hardhat");
 const { network } = require("hardhat");
 const { networkConfig, developmentChains } = require("../helper-hardhat-config");
 module.exports = async ({ getNamedAccounts, deployments }) => {
-    const [deploy, log] = deployments;
-    const [deployer] = await getNamedAccounts();
+    const { deploy, log } = deployments;
+    const { deployer } = await getNamedAccounts();
 
     const chainId = network.config.chainId;
-    const FUND_AMOUNT = ethers.utils.parseUnits("1", "ether");
+    const FUND_AMOUNT = ethers.utils.parseUnits("30", "ether");
 
-    let vrfCoordinatorV2Address, vrfCoordinatorV2Mock;
-    if (developmentChains.includes(network.name)) {
+    let vrfCoordinatorV2Address, vrfCoordinatorV2Mock, subscriptionId;
+    if (chainId == 31337) {
         vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock");
         vrfCoordinatorV2Address = vrfCoordinatorV2Mock.address;
         transactionResponse = await vrfCoordinatorV2Mock.createSubscription();
@@ -26,18 +26,21 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
     const entranceFee = networkConfig[chainId]["entranceFee"];
     const callbackGasLimit = networkConfig[chainId]["callbackGasLimit"];
     const interval = networkConfig[chainId]["interval"];
-    const args = [vrfCoordinatorV2Address, gasLane, entranceFee, callbackGasLimit, interval];
+    const args = [
+        vrfCoordinatorV2Address,
+        subscriptionId,
+        gasLane,
+        interval,
+        entranceFee,
+        callbackGasLimit,
+    ];
 
     const raffle = await deploy("Raffle", {
         from: deployer,
         args: args,
         log: true,
-        waitConfirmations: network.config.blockConfirmations || 1,
+        waitConfirmations: 1,
     });
-    if (developmentChains.includes(network.name)) {
-        const vrfCoordinatorV2Mock = await ethers.getContract("VRFCoordinatorV2Mock");
-        await vrfCoordinatorV2Mock.addConsumer(subscriptionId, raffle.address);
-    }
 };
 
 module.exports.tags = ["all", "raffle"];

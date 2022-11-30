@@ -1,6 +1,6 @@
 /** @type import('hardhat/config').HardhatUserConfig */
 
-//require("@nomiclabs/hardhat-waffle")
+require("@nomiclabs/hardhat-waffle");
 require("@nomiclabs/hardhat-etherscan");
 require("hardhat-deploy");
 require("solidity-coverage");
@@ -28,7 +28,7 @@ module.exports = {
             accounts: [PRIVATE_KEY],
         },
     },
-    getNamedAccounts: {
+    namedAccounts: {
         deployer: {
             default: 0,
         },
