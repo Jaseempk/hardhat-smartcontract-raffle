@@ -1,9 +1,15 @@
 {
   "_format": "hh-sol-cache-2",
   "files": {
+<<<<<<< HEAD
     "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/contracts/Raffle.sol": {
       "lastModificationDate": 1671080319428,
       "contentHash": "56b5d859907ab1a38729629ec8af0202",
+=======
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/contracts/Raffle.sol": {
+      "lastModificationDate": 1669821131964,
+      "contentHash": "a02d276a6938697e622107032f487f9b",
+>>>>>>> 4761f3a1302d86b54d258a45c0e4282993e6386d
       "sourceName": "contracts/Raffle.sol",
       "solcConfig": {
         "version": "0.8.7",
@@ -47,8 +53,13 @@
         "Raffle"
       ]
     },
+<<<<<<< HEAD
     "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol": {
       "lastModificationDate": 1670839935521,
+=======
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol": {
+      "lastModificationDate": 1669821175199,
+>>>>>>> 4761f3a1302d86b54d258a45c0e4282993e6386d
       "contentHash": "eb9cc526ef59dfc4d644f56ddca0633a",
       "sourceName": "@chainlink/contracts/src/v0.8/VRFConsumerBaseV2.sol",
       "solcConfig": {
@@ -89,52 +100,17 @@
         "VRFConsumerBaseV2"
       ]
     },
+<<<<<<< HEAD
     "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol": {
       "lastModificationDate": 1670839983841,
       "contentHash": "8c9ed3426b676f67ee200a2bec96e224",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
-      "solcConfig": {
-        "version": "0.8.7",
-        "settings": {
-          "optimizer": {
-            "enabled": false,
-            "runs": 200
-          },
-          "outputSelection": {
-            "*": {
-              "*": [
-                "abi",
-                "evm.bytecode",
-                "evm.deployedBytecode",
-                "evm.methodIdentifiers",
-                "metadata",
-                "devdoc",
-                "userdoc",
-                "storageLayout",
-                "evm.gasEstimates"
-              ],
-              "": [
-                "ast"
-              ]
-            }
-          },
-          "metadata": {
-            "useLiteralContent": true
-          }
-        }
-      },
-      "imports": [],
-      "versionPragmas": [
-        "^0.8.0"
-      ],
-      "artifacts": [
-        "VRFCoordinatorV2Interface"
-      ]
-    },
-    "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol": {
-      "lastModificationDate": 1670839983811,
+=======
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol": {
+      "lastModificationDate": 1669821175328,
       "contentHash": "c52969cee392918edbf23f914e01c0dc",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
+>>>>>>> 4761f3a1302d86b54d258a45c0e4282993e6386d
       "solcConfig": {
         "version": "0.8.7",
         "settings": {
@@ -173,8 +149,62 @@
         "AutomationCompatibleInterface"
       ]
     },
+<<<<<<< HEAD
+    "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol": {
+      "lastModificationDate": 1670839983811,
+      "contentHash": "c52969cee392918edbf23f914e01c0dc",
+      "sourceName": "@chainlink/contracts/src/v0.8/interfaces/AutomationCompatibleInterface.sol",
+=======
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol": {
+      "lastModificationDate": 1669821175334,
+      "contentHash": "8c9ed3426b676f67ee200a2bec96e224",
+      "sourceName": "@chainlink/contracts/src/v0.8/interfaces/VRFCoordinatorV2Interface.sol",
+>>>>>>> 4761f3a1302d86b54d258a45c0e4282993e6386d
+      "solcConfig": {
+        "version": "0.8.7",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata",
+                "devdoc",
+                "userdoc",
+                "storageLayout",
+                "evm.gasEstimates"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          },
+          "metadata": {
+            "useLiteralContent": true
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "VRFCoordinatorV2Interface"
+      ]
+    },
+<<<<<<< HEAD
     "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol": {
       "lastModificationDate": 1670839983841,
+=======
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol": {
+      "lastModificationDate": 1669821175337,
+>>>>>>> 4761f3a1302d86b54d258a45c0e4282993e6386d
       "contentHash": "a78f72f6c18077e727bc06d7f96b2031",
       "sourceName": "@chainlink/contracts/src/v0.8/mocks/VRFCoordinatorV2Mock.sol",
       "solcConfig": {
@@ -219,8 +249,13 @@
         "VRFCoordinatorV2Mock"
       ]
     },
+<<<<<<< HEAD
     "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol": {
       "lastModificationDate": 1670839983821,
+=======
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/node_modules/@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol": {
+      "lastModificationDate": 1669821175331,
+>>>>>>> 4761f3a1302d86b54d258a45c0e4282993e6386d
       "contentHash": "da5a0c3bd86c896f6a407f909c57edf3",
       "sourceName": "@chainlink/contracts/src/v0.8/interfaces/LinkTokenInterface.sol",
       "solcConfig": {
@@ -261,8 +296,8 @@
         "LinkTokenInterface"
       ]
     },
-    "/home/jaseempk/My-Projects/hardhat-smartcontract-raffle/contracts/mocks/mocks.sol": {
-      "lastModificationDate": 1668919182241,
+    "/Users/alymurtazamemon/Desktop/Blockchain/test/hardhat-smartcontract-raffle/contracts/mocks/mocks.sol": {
+      "lastModificationDate": 1669821131964,
       "contentHash": "885fd4c64708e05dc03a0d04fdd4291d",
       "sourceName": "contracts/mocks/mocks.sol",
       "solcConfig": {
