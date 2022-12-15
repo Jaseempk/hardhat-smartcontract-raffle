@@ -7,6 +7,7 @@ require("solidity-coverage");
 require("hardhat-gas-reporter");
 require("hardhat-contract-sizer");
 require("dotenv").config();
+require("hardhat-test-utils");
 
 const GOERLI_RPC_URL = process.env.GOERLI_RPC_URL;
 const PRIVATE_KEY = process.env.METAMASK_PRIVATE_KEY;
@@ -28,6 +29,12 @@ module.exports = {
             accounts: [PRIVATE_KEY],
         },
     },
+    etherscan: {
+        apiKey: {
+            goerli: ETHERSCAN_API_KEY,
+            hardhat: ETHERSCAN_API_KEY,
+        },
+    },
     namedAccounts: {
         deployer: {
             default: 0,
@@ -35,5 +42,8 @@ module.exports = {
         player: {
             default: 1,
         },
+    },
+    mocha: {
+        timeout: 500000, // 500 seconds max for running tests
     },
 };

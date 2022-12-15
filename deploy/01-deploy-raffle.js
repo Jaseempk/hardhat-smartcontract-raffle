@@ -1,9 +1,11 @@
 const { ethers } = require("hardhat");
 const { network } = require("hardhat");
 const { networkConfig, developmentChains } = require("../helper-hardhat-config");
+
 module.exports = async ({ getNamedAccounts, deployments }) => {
     const { deploy, log } = deployments;
     const { deployer } = await getNamedAccounts();
+    const ETHERSCAN_API_KEY = process.env.ETHERSCAN_API_KEY;
 
     const chainId = network.config.chainId;
     const FUND_AMOUNT = ethers.utils.parseUnits("30", "ether");
@@ -31,8 +33,8 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         subscriptionId,
         gasLane,
         interval,
-        entranceFee,
         callbackGasLimit,
+        entranceFee,
     ];
 
     const raffle = await deploy("Raffle", {
@@ -41,6 +43,7 @@ module.exports = async ({ getNamedAccounts, deployments }) => {
         log: true,
         waitConfirmations: 1,
     });
+    await vrfCoordinatorV2Mock.addConsumer(subscriptionId, raffle.address);
 };
 
 module.exports.tags = ["all", "raffle"];

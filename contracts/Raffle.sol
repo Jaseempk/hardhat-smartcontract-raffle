@@ -48,7 +48,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
     /**FUNCTIONS */
 
     constructor(
-        address vrfCoordinatorV2, /**interacting with outside contract */
+        address vrfCoordinatorV2 /**interacting with outside contract */,
         uint64 subscriptionId,
         bytes32 gasLane,
         uint256 interval,
@@ -83,15 +83,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
 
     function checkUpkeep(
         bytes memory /**checkData */
-    )
-        public
-        view
-        override
-        returns (
-            bool upkeepNeeded,
-            bytes memory /**performData */
-        )
-    {
+    ) public view override returns (bool upkeepNeeded, bytes memory /**performData */) {
         bool isOpen = s_raffleState == RaffleState.OPEN;
         bool hasPlayers = s_players.length > 0;
         bool hasBalance = address(this).balance > 0;
@@ -100,9 +92,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
         return (upkeepNeeded, "0x0");
     }
 
-    function performUpkeep(
-        bytes calldata /**performData */
-    ) external override {
+    function performUpkeep(bytes calldata /**performData */) external override {
         (bool upkeepNeeded, ) = checkUpkeep("");
         if (!upkeepNeeded) {
             revert Raffle__upkeepFailed(
@@ -127,7 +117,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
      */
 
     function fulfillRandomWords(
-        uint256, /**requestId */
+        uint256 /**requestId */,
         uint256[] memory randomWords
     ) internal override {
         uint256 indexOfWinner = randomWords[0] % s_players.length;
@@ -143,16 +133,7 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
         emit getRecentWinner(s_recentWinner);
     }
 
-    function getRequestConfig()
-        external
-        view
-        override
-        returns (
-            uint16,
-            uint32,
-            bytes32[] memory
-        )
-    {}
+    function getRequestConfig() external view override returns (uint16, uint32, bytes32[] memory) {}
 
     function requestRandomWords(
         bytes32 keyHash,
@@ -164,16 +145,13 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
 
     function createSubscription() external override returns (uint64 subId) {}
 
-    function getSubscription(uint64 subId)
+    function getSubscription(
+        uint64 subId
+    )
         external
         view
         override
-        returns (
-            uint96 balance,
-            uint64 reqCount,
-            address owner,
-            address[] memory consumers
-        )
+        returns (uint96 balance, uint64 reqCount, address owner, address[] memory consumers)
     {}
 
     function requestSubscriptionOwnerTransfer(uint64 subId, address newOwner) external override {}
@@ -187,4 +165,28 @@ contract Raffle is VRFConsumerBaseV2, AutomationCompatibleInterface, VRFCoordina
     function cancelSubscription(uint64 subId, address to) external override {}
 
     function pendingRequestExists(uint64 subId) external view override returns (bool) {}
+
+    function getRaffleState() public view returns (RaffleState) {
+        return s_raffleState;
+    }
+
+    function getInterval() public view returns (uint256) {
+        return i_interval;
+    }
+
+    function getPlayers(uint256 index) public view returns (address) {
+        return s_players[index];
+    }
+
+    function getLatestTimestamp() public view returns (uint256) {
+        return s_lastTimestamp;
+    }
+
+    function getWinner() public view returns (address) {
+        return s_recentWinner;
+    }
+
+    function getEntranceFee() public view returns (uint256) {
+        return i_entranceFee;
+    }
 }
